@@ -5,4 +5,4 @@ title: Projects
 
 
 ### Projects
-[WomenTechWomenYes Gala Signups](https://njjouud.github.io/projects/WomenTechWomenYes)
+[WomenTechWomenYes Gala Signups]('/WomenTechWomenYes')

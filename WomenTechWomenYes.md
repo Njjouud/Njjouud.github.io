@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Projects
+title: WomenTechWomenYes 
 ---
 
 
-### Projects
+### Work stages
 [WomenTechWomenYes Gala Signups](/WomenTechWomenYes)
