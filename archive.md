@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Archive
+title: Projects
 ---
 
-## Blog Posts
 
-{% for post in site.posts %}
-  * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
-{% endfor %}
+### Projects
+[WomenTechWomenYes Gala Signups](https://njjouud.github.io/archive/WomenTechWomenYes)
