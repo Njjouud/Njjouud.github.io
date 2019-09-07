@@ -1,5 +1,5 @@
 ---
-layout: post
+womenlayout: post
 title: Data Scince 
 ---
 
@@ -8,7 +8,6 @@ This is me Njoud and this page is the page where I will be posting my little ach
 
 Below are the links for my little achivments:
 
-
-[WomenTechWomenYes Gala Signups](https://njjouud.github.io/archive/)
+[WomenTechWomenYes Gala Signups](https://njjouud.github.io/womentechwomenyes/)
 
 
