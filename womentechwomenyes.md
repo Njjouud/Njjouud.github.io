@@ -1,7 +1,6 @@
 ---
-layout: default
-title: "WomenTechWomenYes Gala"
-permalink: 404.html
+layout: page
+title: WomenTechWomenYes
 ---
 
 <div class="page">
@@ -37,3 +36,7 @@ permalink: 404.html
   </p>
 </div>
 
+
+Have questions or suggestions? Feel free to [email me](mailto:njoud.algifari@gmail.com).
+
+Thanks for reading!
