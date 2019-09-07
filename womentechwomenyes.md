@@ -15,26 +15,24 @@ title: WomenTechWomenYes
     Firstly we striped out the white spaces from the dataset columns and parse date and time columns to timestamp., secondly we assured that there is no NaN values and negative values, thirdly we extracted the actual entries and exits values and stored them into inflow and outflow columns, fourthly we got rid of the outliers by setting a limit for the entries and exits values.
   </p>
   <h3 class="lead">Data Visulaization</h3>
-  <p>
-    We started by getting the most crowded stations we are avoiding torist by excluding airport stations but luckly airport stations weren't part of the most crowded stations in New York.         			<br/><img src="stations.png"  width="300" height="200"  alt='most crowded stations'/>
-   <br/> As the graph telling us that there's a huge differance between the 1st crowded statios and the 10th so as a result we recommend to focus on the top 5 stations.
-  </p>
-  <p>
-    After that we looked for the most crowded days in a week.            			<br/><img src="days.png"  width="300" height="200"  alt='most crowded stations'/>
-  </p>
-    <p>
-    And then we looked for the most crowded time in a day.            			<br/><img src="time.png"  width="300" height="200"  alt='most crowded stations'/>
-  </p>
-     <p>
-    Last but not least, we looked for the most crowded turnstiles from the top five crowded stations.    
-       <br/><img src="turnstiles.png"  width="350" height="200"  alt='most crowded stations'/>
-  <h2>
-    Conclusion
-  </h2>
-  <p>
-    We recommend the client to depoly street teams in these stations 34-ST_PENN STA, GRD CNTRL, 34- ST HERALED, 14 ST_UNION and TIMES SW-42 ST. On weekdays from 8am till 11am. And target the mentioned turnstiles.
-  </p>
-</div>
+
+    We started by getting the most crowded stations we are avoiding torist by excluding airport stations but luckly airport stations weren't part of the most crowded stations in New York.         			<br/>
+
+  ![stations](/Users/Njoud/Desktop/Njjouud.github.io/stations.png)  As the graph telling us that there's a huge differance between the 1st crowded statios and the 10th so as a result we recommend to focus on the top 5 stations.
+
+After that we looked for the most crowded days in a week.   ![days](/Users/Njoud/Desktop/Njjouud.github.io/days.png)
+
+And then we looked for the most crowded time in a day.
+
+![time](/Users/Njoud/Desktop/Njjouud.github.io/time.png)
+
+ Last but not least, we looked for the most crowded turnstiles from the top five crowded stations.  
+
+![turnstiles](/Users/Njoud/Desktop/Njjouud.github.io/turnstiles.png)
+
+## Conclusion
+
+We recommend the client to depoly street teams in these stations 34-ST_PENN STA, GRD CNTRL, 34- ST HERALED, 14 ST_UNION and TIMES SW-42 ST. On weekdays from 8am till 11am. And target the mentioned turnstiles.
 
 
 Have questions or suggestions? Feel free to [email me](mailto:njoud.algifari@gmail.com).
