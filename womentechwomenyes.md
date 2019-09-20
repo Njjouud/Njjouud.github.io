@@ -3,18 +3,18 @@ layout: page
 title: WomenTechWomenYes
 ---
 
-## WomenTechWomenYes Gala
+
 ### Overview
 
 This analysis is for (WTWY), to help their street teams to gain more signups for their gala that will take place on the first of June.As a Data scientist team, we conducted an EDA on New York Subway data.
 
 ### Work Stages
 
-### Data cleaning
+#### Data cleaning
 
 Firstly we striped out the white spaces from the dataset columns and parse date and time columns to timestamp., secondly we assured that there is no NaN values and negative values, thirdly we extracted the actual entries and exits values and stored them into inflow and outflow columns, fourthly we got rid of the outliers by setting a limit for the entries and exits values.
 
-### Data Visulaization
+##### Data Visulaization
 We started by getting the most crowded stations we are avoiding torist by excluding airport stations but luckly airport stations weren't part of the most crowded stations in New York.   
 
 
@@ -30,7 +30,7 @@ And then we looked for the most crowded time in a day.
 
 ![turnstiles]({{ site.url }}/images/turnstiles.png)
 
-## Conclusion
+### Conclusion
 
 We recommend the client to depoly street teams in these stations 34-ST_PENN STA, GRD CNTRL, 34- ST HERALED, 14 ST_UNION and TIMES SW-42 ST. On weekdays from 8am till 11am. And target the mentioned turnstiles.
 
