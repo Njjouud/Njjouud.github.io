@@ -4,7 +4,7 @@ title: About Me
 ---
 
 
-<class ="message>Hey there! </class>
+<class ="message">Hey there! </class>
 
 
 ### Experience
