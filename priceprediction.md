@@ -13,36 +13,36 @@ Predicting features that affect smartphones’ prices the most.
 Selenium to scrap data from [Souq](https://saudi.souq.com/sa-en/).
 
 ### Dataset
-#### Data Points
+##### Data Points
 1280 row.
 
-#### Features
+##### Features
 * Brand.
 * Color.
 * Storage.
 
 
 ### Work Stages
-#### Web Scraping
+##### Web Scraping
 
 From:[Souq](https://saudi.souq.com/sa-en/).
 
-#### Data Cleaning
+##### Data Cleaning
 
 * Removing Nan values.
 * Removing duplicates.
 * Creating dummy varibles for categocial data.
 
-#### Baseline Model
+##### Baseline Model
 
 Linear Regression Model with R-squared = 0.790.
 
-#### Feature Engineering
+##### Feature Engineering
 
 * Calculate log2 of storage.
 * Calculate log of price.
 
-#### Building,Validating and Testing Model
+##### Building,Validating and Testing Model
 
 After doing some feature engineering R-squared has increased to 0.875.
 
@@ -52,18 +52,18 @@ Target distribution after doing log transformation to remove the skewness.
 ![distribution]({{ site.url }}/images/price_log_dist.png)
 
 ### Correlation Matrix
-#### Heatmap
+##### Heatmap
 
 Hypothesis: Storage seems to has the most impact on price.
 
 ![correlation]({{ site.url }}/images/heat_map.png)
 
 ### Result
-#### Residual Polt
+##### Residual Polt
 
 ![Residual]({{ site.url }}/images/residual.png)
 
-#### Testing
+##### Testing
 
 Predicting smartphones' prices in the test dataset and compare them against actual prices. -prices are logged-
 
@@ -83,6 +83,6 @@ Have questions or suggestions? Feel free to [email me](mailto:njoud.algifari@gma
 Thanks for reading!
 
 ### Appendix
-#### Appendix A -Features' Coefficients-
+##### Appendix A -Features' Coefficients-
 
 ![coefficients]({{ site.url }}/images/coeffecients.png)
