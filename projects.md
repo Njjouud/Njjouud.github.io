@@ -4,8 +4,7 @@ title: Projects
 ---
 
 
-#### Overview
-Here where you can find all my data sceince related projects links:
+Here you can find all my data sceince projects links:
 
-[WomenTechWomenYes Gala Signups]('/womentechwomenyes.md')
+[WomenTechWomenYes Gala Signups]('/womentechwomenyes')
 
