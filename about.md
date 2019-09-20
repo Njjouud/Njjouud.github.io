@@ -4,10 +4,16 @@ title: About
 ---
 
 <p class="message">
-  Hey there this is me Njoud! This page is where I will be posting things about my data since related achievements! 
+  Hey there this is me Njoud! I'm a LEGO fan.
 </p>
+### Experience
+I was a Business Analyst Intern for 3 months at the General Authority for Civil Aviation, currently I'm part of Tuwaiq Data Science Bootcamp.
 
+### Education
+I just graduated from King Saud University majoring in Information Systems.
 
-Have questions or suggestions? Feel free to [email me](mailto:njoud.algifari@gmail.com).
+### Contact me
+* [E-mail](mailto:njoud.algifari@gmail.com).
+* [E-mail](https://www.linkedin.com/in/njoudalgifari).
 
 Thanks for reading!
