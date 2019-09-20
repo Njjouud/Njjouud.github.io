@@ -34,5 +34,5 @@ gems:
 # Page List
 pages_list:       
   About: '/about'
-  Project1 Women Tech Women Yes: '/womentechwomenyes'
+  Projects: '/_posts/womentechwomenyes'
   Feed: '/index.html'
