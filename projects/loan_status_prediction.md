@@ -177,9 +177,9 @@ Since the result satisfies me enough I tested the model and compared the model r
 ![random_forest]({{ site.url }}/images/actual_predicted_loan.png)
 
 And bar plot is comparing the result of the confusion matrix:<br/>
-![cm]({{ site.url }}/images/cm_before_threshhold.png)<br/>
+![cm]({{ site.url }}/images/loan_cm_before_threshhold.png)<br/>
 As you can see the True Negative value is to low comparing it to the True Positive value, and thats why I build a function that finds the best threshold value.
-![cm]({{ site.url }}/images/cm_after_threshhold.png)<br/>
+![cm]({{ site.url }}/images/loan_cm_after_threshhold.png)<br/>
 
 ### Business Insight
 Since my data didn't help me finding the average profit for each loan. I did my research to find the average and plotted the optimized threshold along with the profit  and the result was reasonable.
