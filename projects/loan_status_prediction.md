@@ -113,46 +113,46 @@ Precision:          0.32466918714555765<br/>
 Recall:               0.15042697613312897<br/>
 
 Decision Tree Result:<br/>
-fit_time              0.529221<br/>
-score_time        0.063719<br/>
-test_accuracy   0.708044<br/>
-train_accuracy  1.000000<br/>
-test_precision   0.802186<br/>
-train_precision  1.000000<br/>
-test_recall          0.792122<br/>
-train_recall        1.000000<br/>
-test_f1              0.797120<br/>
-train_f1             1.000000<br/>
+fit_time:              0.529221<br/>
+score_time:        0.063719<br/>
+test_accuracy:   0.708044<br/>
+train_accuracy:  1.000000<br/>
+test_precision:   0.802186<br/>
+train_precision:  1.000000<br/>
+test_recall:          0.792122<br/>
+train_recall:        1.000000<br/>
+test_f1:              0.797120<br/>
+train_f1:             1.000000<br/>
 
 Random Forest Result:<br/>
-fit_time             0.848813<br/>
-score_time       0.171709<br/>
-test_accuracy  0.759097<br/>
-train_accuracy 0.992004<br/>
-test_precision   0.805275<br/>
-train_precision  0.992866<br/>
-test_recall         0.880124<br/>
-train_recall        0.996116<br/>
+fit_time:             0.848813<br/>
+score_time:       0.171709<br/>
+test_accuracy:  0.759097<br/>
+train_accuracy: 0.992004<br/>
+test_precision:   0.805275<br/>
+train_precision:  0.992866<br/>
+test_recall:        0.880124<br/>
+train_recall:        0.996116<br/>
 
 Logistic Regression Result:<br/>
-fit_time              0.361881<br/>
-score_time        0.022789<br/>
-test_accuracy   0.775652<br/>
-train_accuracy  0.775408<br/>
-test_precision   0.765078<br/>
-train_precision  0.764909<br/>
-test_recall         0.996021<br/>
-train_recall        0.995937<br/>
+fit_time:              0.361881<br/>
+score_time:        0.022789<br/>
+test_accuracy:   0.775652<br/>
+train_accuracy:  0.775408<br/>
+test_precision:   0.765078<br/>
+train_precision:  0.764909<br/>
+test_recall:         0.996021<br/>
+train_recall:        0.995937<br/>
 
 Naive Bayes Classifier Result: <br/>
-fit_time              0.033692<br/>
-score_time        0.042347<br/>
-test_accuracy    0.401805<br/>
-train_accuracy   0.402171<br/>
-test_precision    0.963284<br/>
-train_precision   0.963789<br/>
-test_recall          0.180804<br/>
-train_recall         0.181183<br/>
+fit_time:              0.033692<br/>
+score_time:        0.042347<br/>
+test_accuracy:    0.401805<br/>
+train_accuracy:   0.402171<br/>
+test_precision:    0.963284<br/>
+train_precision:   0.963789<br/>
+test_recall:          0.180804<br/>
+train_recall:         0.181183<br/>
 
 After trying all of these models I wasn't satisfied enough with the results so I decided to do some feature engineering!
 
