@@ -9,6 +9,9 @@ title: Loan Status Prediction
 Predict loan status if it is fully paid or charged off(amount of credit that is unlikely to be collected) using a bank loan dataset. And what I mean by charged off status is the amount of credit that is unlikely to be collected.
 
 ### Dataset Description
+##### Dataset Source
+[Kaggle](https://www.kaggle.com/omkar5/dataset-for-bank-loan-prediction/)
+
 ##### Dataset Dimensions
 (19x101k).
 
@@ -38,39 +41,145 @@ Predict loan status if it is fully paid or charged off(amount of credit that is 
 </ul> 
 
 
+### Work Stages
+#### Data Cleaning
+Firstly I started by cleaning data by removing null rows and replacing null numerical cells with the mean and null categorical cells with mode.
+Secondly I dealt with the columns that have lots of categories by grouping them. So for example Purpose data field had these categories:<br/>
+<ul>
+<li>Debt Consolidation      78552<\li>
+<li>other                    6037<\li>
+<li>Home Improvements        5839<\li>
+<li>Other                    3250<\li>
+<li>Business Loan            1569<\li>
+<li>Buy a Car                1265<\li>
+<li>Medical Bills            1127<\li>
+<li>Buy House                 678<\li>
+<li>Take a Trip               573<\li>
+<li>Major_purchase            352<\li>
+<li>Small_business            283<\li>
+<li>Moving                    150<\li>
+<li>Wedding                   115<\li>
+<li>Vacation                  101<\li>
+<li>Educational Expenses       99<\li>
+<li>Renewable_energy           10<\li>
+</ul>
+I categorized them into 6 different categories:
+<ul>
+<li>Other:<\li>
+<ul>
+<li>other            <\li>      
+<li>Other            <\li>        
+<li>Major_purchase   <\li>        
+<li>Renewable_energy  <\li>
+<\ul>   
+<li>Home:<\li>
+<ul>
+<li>Home Improvements  <\li>      
+<li>Buy House   <\li>
+<\ul>
+<li>Essentials: <\li>
+<ul>
+<li>Buy a Car       <\li>         
+<li>Medical Bills    <\li>        
+<li>Educational Expenses <\li>      
+<\ul>
+<li>Leisure:<\li>
+<ul>
+<li>Wedding    <\li>               
+<li>Take a Trip  <\li>             
+<li>Vacation    <\li>              
+<li>Moving      <\li>              
+<\ul>
+<li>Business:<\li>
+<ul>
+<li>Small_business  <\li>          
+<li>Business Loan <\li>           
+<\ul>
+<li>Debt Consolidation  <\li>  
+<\ul>  
+Thirdly, I converted categorical field to 1,0 columns.
+Lastly, I removed duplicates. 
 
-### Target Classes
 
-Before balacing classes.
-Fully Paid = 72%
-Charged off = 28% 
+### Baseline Models
+After cleaning data I tried building several models with 3-cross validation folds  to find the best model that fits my data.
+K-Nearest Neighbor Result:
+Accuracy:   0.7359100631746506
+Precision:  0.32466918714555765
+Recall:     0.15042697613312897
 
-![before]({{ site.url }}/images/stations.png)
+Decision Tree Result:
+fit_time           0.529221
+score_time         0.063719
+test_accuracy      0.708044
+train_accuracy     1.000000
+test_precision     0.802186
+train_precision    1.000000
+test_recall        0.792122
+train_recall       1.000000
+test_f1            0.797120
+train_f1           1.000000
 
-#### Data cleaning
+Random Forest Result:
+fit_time           0.848813
+score_time         0.171709
+test_accuracy      0.759097
+train_accuracy     0.992004
+test_precision     0.805275
+train_precision    0.992866
+test_recall        0.880124
+train_recall       0.996116
 
-Firstly we striped out the white spaces from the dataset columns and parse date and time columns to timestamp., secondly we assured that there is no NaN values and negative values, thirdly we extracted the actual entries and exits values and stored them into inflow and outflow columns, fourthly we got rid of the outliers by setting a limit for the entries and exits values.
+Logistic Regression Result:
+fit_time           0.361881
+score_time         0.022789
+test_accuracy      0.775652
+train_accuracy     0.775408
+test_precision     0.765078
+train_precision    0.764909
+test_recall        0.996021
+train_recall       0.995937
 
-##### Data Visulaization
-We started by getting the most crowded stations we are avoiding torist by excluding airport stations but luckly airport stations weren't part of the most crowded stations in New York.   
+Naive Bayes Classifier Result: 
+fit_time           0.033692
+score_time         0.042347
+test_accuracy      0.401805
+train_accuracy     0.402171
+test_precision     0.963284
+train_precision    0.963789
+test_recall        0.180804
+train_recall       0.181183
 
+After trying all of these models I wasn't satisfied enough with the results so I decided to do some feature engineering!
 
-    As the graph telling us that there's a huge differance between the 1st crowded statios and the 10th so as a result we recommend to focus on the top 5 stations.
+### Feature Engineering 
+For The feature engineering part I created dummy variables for the categorical fields. And since the target classes weren't balanced(72% of the fully paid class and 28% of the charged off class)  I decided to oversample the charged-off class using SMOTE function.
+Before balancing Loan Status Class:<br/>
+![before]({{ site.url }}/images/loan_imbalanced_classes.png)
 
-After that we looked for the most crowded days in a week.   ![days]({{ site.url }}/images/days.png)
+After balancing the classes:
+![After]({{ site.url }}/images/loan_balanced_classes.png)
 
-And then we looked for the most crowded time in a day.
+### Final Model
+After doing the feature engineering part I decided to try pipelining my data to get the best model that fits my data with the right hyperparameters and that was the result.<br/>
+![pipeline]({{ site.url }}/images/loan_pipeline.png)
+So I fitted my data into Random Forest Classifier and the result was amazing!<br\>
+Accuracy:  0.7952439024390244
+Precision:  0.7884382973009265
+Recall:  0.9826778242677824
+f1:  0.8749068693190283
 
-![time]({{ site.url }}/images/time.png)
+Since the result satisfies me enough I tested the model and compared the model result along with the actual data(1=Fully Paid Loan, 2=Charged-off Loan).<br\>
+![random_forest]({{ site.url }}/images/actual_predicted_loan.png)
 
- Last but not least, we looked for the most crowded turnstiles from the top five crowded stations.  
+And bar plot is comparing the result of the confusion matrix:<br/>
+![cm]({{ site.url }}/images/cm_before_threshhold.png)<br/>
+As you can see the True Negative value is to low comparing it to the True Positive value, and thats why I build a function that finds the best threshold value.
+![cm]({{ site.url }}/images/cm_after_threshhold.png)<br/>
 
-![turnstiles]({{ site.url }}/images/turnstiles.png)
-
-### Conclusion
-
-We recommend the client to depoly street teams in these stations 34-ST_PENN STA, GRD CNTRL, 34- ST HERALED, 14 ST_UNION and TIMES SW-42 ST. On weekdays from 8am till 11am. And target the mentioned turnstiles.
-
+### Business Insight
+Since my data didn't help me finding the average profit for each loan. I did my research to find the average and plotted the optimized threshold along with the profit  and the result was reasonable.
+![profit]({{ site.url }}/images/loan_profit.png)<br/>
 
 Have questions or suggestions? Feel free to [email me](mailto:njoud.algifari@gmail.com).
 
