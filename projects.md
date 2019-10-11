@@ -6,7 +6,7 @@ title: Projects
 <body>Here you can find all my data sceince projects links:</body>
 
 * [WomenTechWomenYes Gala Signups](/womentechwomenyes)
-
 * [Smartphones' Prices Prediction](/priceprediction.md)
+* [Loan Status Prediction](/loan_status_prediction.md)
 
 

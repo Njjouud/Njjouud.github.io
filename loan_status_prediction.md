@@ -1,0 +1,77 @@
+---
+layout: page
+title: Loan Status Prediction
+---
+
+
+### Purpose
+
+Predict loan status if it is fully paid or charged off(amount of credit that is unlikely to be collected) using a bank loan dataset. And what I mean by charged off status is the amount of credit that is unlikely to be collected.
+
+### Dataset Description
+##### Dataset Dimensions
+(19x101k).
+
+##### Features
+<ul>
+  <li>Numeric Features</li>
+  <ul>
+  <li>Credit Score(risk a lender takes when you borrow money).</li>
+  <li>Annual Income.</li>
+  <li>Current Loan Amount.</li>
+  <li>Monthly Debt.</li>
+  <li>Years of Credit History.</li>
+  <li>Number of Open Accounts</li>
+  <li>Number of Credit Problems.</li>
+  <li>Current Credit Balance.</li>
+  <li>Maximum Open Credit and Tax Liens.</li>
+<li>Months since last delinquent.</li>
+  <li>Bankruptcies</li>
+  </ul>
+  <li>Categorical Features</li>
+<ul>
+  <li>Loan Status.</li>
+  <li>Term.</li>
+  <li>Home Ownership.</li>
+  <li>Purpose.</li>
+  </ul>
+</ul> 
+
+
+
+### Target Classes
+
+Before balacing classes.
+Fully Paid = 72%
+Charged off = 28% 
+
+![before]({{ site.url }}/images/stations.png)
+
+#### Data cleaning
+
+Firstly we striped out the white spaces from the dataset columns and parse date and time columns to timestamp., secondly we assured that there is no NaN values and negative values, thirdly we extracted the actual entries and exits values and stored them into inflow and outflow columns, fourthly we got rid of the outliers by setting a limit for the entries and exits values.
+
+##### Data Visulaization
+We started by getting the most crowded stations we are avoiding torist by excluding airport stations but luckly airport stations weren't part of the most crowded stations in New York.   
+
+
+    As the graph telling us that there's a huge differance between the 1st crowded statios and the 10th so as a result we recommend to focus on the top 5 stations.
+
+After that we looked for the most crowded days in a week.   ![days]({{ site.url }}/images/days.png)
+
+And then we looked for the most crowded time in a day.
+
+![time]({{ site.url }}/images/time.png)
+
+ Last but not least, we looked for the most crowded turnstiles from the top five crowded stations.  
+
+![turnstiles]({{ site.url }}/images/turnstiles.png)
+
+### Conclusion
+
+We recommend the client to depoly street teams in these stations 34-ST_PENN STA, GRD CNTRL, 34- ST HERALED, 14 ST_UNION and TIMES SW-42 ST. On weekdays from 8am till 11am. And target the mentioned turnstiles.
+
+
+Have questions or suggestions? Feel free to [email me](mailto:njoud.algifari@gmail.com).
+
+Thanks for reading!
