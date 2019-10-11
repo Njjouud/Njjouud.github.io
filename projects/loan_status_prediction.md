@@ -6,7 +6,7 @@ title: Loan Status Prediction
 
 ### Purpose
 
-Predict loan status if it is fully paid or charged off(amount of credit that is unlikely to be collected) using a bank loan dataset. And what I mean by charged off status is the amount of credit that is unlikely to be collected.
+Predict loan status if it is fully paid or charged off using a bank loan dataset. And what I mean by charged off status is the amount of credit that is unlikely to be collected.
 
 ### Dataset Description
 ##### Dataset Source
@@ -44,27 +44,28 @@ Predict loan status if it is fully paid or charged off(amount of credit that is 
 
 ##### Data Cleaning
 
-Firstly I started by cleaning data by removing null rows and replacing null numerical cells with the mean and null categorical cells with mode.
-Secondly I dealt with the columns that have lots of categories by grouping them. So for example Purpose data field had these categories:
+I started cleaning data by:
 
-<ul>
-  <li>Debt Consolidation      78552</li>
-<li>other                    6037</li>
-<li>Home Improvements        5839</li>
-<li>Other                    3250</li>
-<li>Business Loan            1569</li>
-<li>Buy a Car                1265</li>
-<li>Medical Bills            1127</li>
-<li>Buy House                 678</li>
-<li>Take a Trip               573</li>
-<li>Major_purchase            352</li>
-<li>Small_business            283</li>
-<li>Moving                    150</li>
-<li>Wedding                   115</li>
-<li>Vacation                  101</li>
-<li>Educational Expenses       99</li>
-<li>Renewable_energy           10</li>
-</ul>
+- Dropping null observations.
+- Replacing null numerical cells with the mean.  
+- Null categorical cells with mode.
+- Grouped the columns that have lots of categories by grouping them. For example, Purpose data field had these categories and number of datapoints:
+  * Debt Consolidation 78552 
+  * other 6037
+  * Home improvments 5839
+  * Other 3250
+  * Business Loan 1569
+  * Buy a Car 1265
+  * Medical Bills 1127
+  * Buy House 678
+  * Take a Trip 573
+  * Major_purchase 352
+  * Small_business 283
+  * Moving 150
+  * Wedding  115
+  * Vacation 101
+  * Educational Expenses  99
+  * Renewable_energy 10
 
 I categorized them into 6 different categories:
 <ul>
@@ -106,53 +107,53 @@ Lastly, I removed duplicates.
 
 
 ##### Baseline Models
-After cleaning data I tried building several models with 3-cross validation folds  to find the best model that fits my data.
+After cleaning data I tried building several models with 3-cross validation folds to find the best model that fits my data.
 K-Nearest Neighbor Result:<br/>
-Accuracy:          0.7359100631746506<br/>
-Precision:          0.32466918714555765<br/>
-Recall:               0.15042697613312897<br/>
+Accuracy:          0.7359<br/>
+Precision:          0.3246<br/>
+Recall:               0.1504<br/>
 
 Decision Tree Result:<br/>
-fit_time:              0.529221<br/>
-score_time:        0.063719<br/>
-test_accuracy:   0.708044<br/>
-train_accuracy:  1.000000<br/>
-test_precision:   0.802186<br/>
-train_precision:  1.000000<br/>
-test_recall:          0.792122<br/>
-train_recall:        1.000000<br/>
-test_f1:              0.797120<br/>
-train_f1:             1.000000<br/>
+fit_time:              0.5292<br/>
+score_time:        0.0637<br/>
+test_accuracy:   0.7080<br/>
+train_accuracy:  1.0000<br/>
+test_precision:   0.8021<br/>
+train_precision:  1.0000<br/>
+test_recall:          0.7921<br/>
+train_recall:        1.0000<br/>
+test_f1:              0.7971<br/>
+train_f1:             1.0000<br/>
 
 Random Forest Result:<br/>
-fit_time:             0.848813<br/>
-score_time:       0.171709<br/>
-test_accuracy:  0.759097<br/>
-train_accuracy: 0.992004<br/>
-test_precision:   0.805275<br/>
-train_precision:  0.992866<br/>
-test_recall:        0.880124<br/>
-train_recall:        0.996116<br/>
+fit_time:             0.8488<br/>
+score_time:       0.1717<br/>
+test_accuracy:  0.7590<br/>
+train_accuracy: 0.9920<br/>
+test_precision:   0.8052<br/>
+train_precision:  0.9928<br/>
+test_recall:        0.8801<br/>
+train_recall:        0.9961<br/>
 
 Logistic Regression Result:<br/>
-fit_time:              0.361881<br/>
-score_time:        0.022789<br/>
-test_accuracy:   0.775652<br/>
-train_accuracy:  0.775408<br/>
-test_precision:   0.765078<br/>
-train_precision:  0.764909<br/>
-test_recall:         0.996021<br/>
-train_recall:        0.995937<br/>
+fit_time:              0.3618<br/>
+score_time:        0.0227<br/>
+test_accuracy:   0.7756<br/>
+train_accuracy:  0.7754<br/>
+test_precision:   0.7650<br/>
+train_precision:  0.7649<br/>
+test_recall:         0.9960<br/>
+train_recall:        0.9959<br/>
 
 Naive Bayes Classifier Result: <br/>
-fit_time:              0.033692<br/>
-score_time:        0.042347<br/>
-test_accuracy:    0.401805<br/>
-train_accuracy:   0.402171<br/>
-test_precision:    0.963284<br/>
-train_precision:   0.963789<br/>
-test_recall:          0.180804<br/>
-train_recall:         0.181183<br/>
+fit_time:              0.0336<br/>
+score_time:        0.0423<br/>
+test_accuracy:    0.4018<br/>
+train_accuracy:   0.4021<br/>
+test_precision:    0.9632<br/>
+train_precision:   0.9637<br/>
+test_recall:          0.1808<br/>
+train_recall:         0.1811<br/>
 
 After trying all of these models I wasn't satisfied enough with the results so I decided to do some feature engineering!
 
@@ -168,12 +169,12 @@ After balancing the classes:
 After doing the feature engineering part I decided to try pipelining my data to get the best model that fits my data with the right hyperparameters and that was the result.<br/>
 ![pipeline]({{ site.url }}/images/loan_pipeline.png)
 So I fitted my data into Random Forest Classifier and the result was amazing!<br/>
-Accuracy:  0.7952439024390244<br/>
-Precision:  0.7884382973009265<br/>
-Recall:  0.9826778242677824<br/>
-f1:  0.8749068693190283<br/>
+Accuracy:  0.7952<br/>
+Precision:  0.7884<br/>
+Recall:  0.9826<br/>
+f1:  0.8749<br/>
 
-Since the result satisfies me enough I tested the model and compared the model result along with the actual data(1=Fully Paid Loan, 2=Charged-off Loan).<br/>
+Since the results satisfy me enough I tested the model and compared the model result along with the actual data(1=Fully Paid Loan, 2=Charged-off Loan).<br/>
 ![random_forest]({{ site.url }}/images/actual_predicted_loan.png)
 
 And bar plot is comparing the result of the confusion matrix:<br/>
