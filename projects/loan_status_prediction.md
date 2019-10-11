@@ -42,7 +42,7 @@ Predict loan status if it is fully paid or charged off(amount of credit that is 
 
 ### Work Stages
 
-### Data Cleaning
+##### Data Cleaning
 
 Firstly I started by cleaning data by removing null rows and replacing null numerical cells with the mean and null categorical cells with mode.
 Secondly I dealt with the columns that have lots of categories by grouping them. So for example Purpose data field had these categories:
@@ -105,7 +105,7 @@ Lastly, I removed duplicates.
 
 
 
-### Baseline Models
+##### Baseline Models
 After cleaning data I tried building several models with 3-cross validation folds  to find the best model that fits my data.
 K-Nearest Neighbor Result:<br/>
 Accuracy:          0.7359100631746506<br/>
@@ -156,7 +156,7 @@ train_recall:         0.181183<br/>
 
 After trying all of these models I wasn't satisfied enough with the results so I decided to do some feature engineering!
 
-### Feature Engineering 
+##### Feature Engineering 
 For The feature engineering part I created dummy variables for the categorical fields. And since the target classes weren't balanced(72% of the fully paid class and 28% of the charged off class)  I decided to oversample the charged-off class using SMOTE function.
 Before balancing Loan Status Class:<br/>
 ![before]({{ site.url }}/images/loan_imbalanced_classes.png)
@@ -164,7 +164,7 @@ Before balancing Loan Status Class:<br/>
 After balancing the classes:
 ![After]({{ site.url }}/images/loan_balanced_classes.png)
 
-### Final Model
+##### Final Model
 After doing the feature engineering part I decided to try pipelining my data to get the best model that fits my data with the right hyperparameters and that was the result.<br/>
 ![pipeline]({{ site.url }}/images/loan_pipeline.png)
 So I fitted my data into Random Forest Classifier and the result was amazing!<br/>
