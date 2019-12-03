@@ -1,6 +1,6 @@
 ---
 layout: page
-title: WomenTechWomenYes
+title: Detecting Parkinson’s Disease Based on Hand-Drawings
 ---
 
 
